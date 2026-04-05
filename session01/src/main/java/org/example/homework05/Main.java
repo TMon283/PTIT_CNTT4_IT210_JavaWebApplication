@@ -1,0 +1,18 @@
+package org.example.homework05;
+
+import org.example.homework05.config.AppConfig;
+import org.example.homework05.model.SystemConfig;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
+public class Main {
+    public static void main(String[] args) {
+        ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+
+        SystemConfig config = context.getBean(SystemConfig.class);
+
+        System.out.println("Name: " + config.getBranchName());
+        System.out.println("Opening: " + config.getOpeningHour());
+    }
+}
+
