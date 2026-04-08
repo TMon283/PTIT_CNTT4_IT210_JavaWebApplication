@@ -10,15 +10,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class AuthController {
 
-    @GetMapping("/login")
+    @GetMapping("/loginn")
     public String showLogin(HttpSession session) {
         if (session.getAttribute("loggedUser") != null) {
             return "redirect:/orders";
         }
-        return "login";
+        return "loginn";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/loginn")
     public String processLogin(@RequestParam String username, @RequestParam
                                 String password, HttpSession session, Model model) {
         if (("admin".equals(username) && "admin123".equals(password)) ||
@@ -28,12 +28,12 @@ public class AuthController {
             return "redirect:/orders";
         }
         model.addAttribute("error", "Tên đăng nhập hoặc mật khẩu không chính xác!");
-        return "login";
+        return "loginn";
     }
 
-    @GetMapping("/logout")
-    public String logout(HttpSession session) {
+    @GetMapping("/logoutt")
+    public String logoutt(HttpSession session) {
         session.invalidate();
-        return "redirect:/login";
+        return "redirect:/loginn";
     }
 }
