@@ -1,0 +1,23 @@
+So sánh ưu/nhược điểm của 2 cách tiếp cận: (A) Copy-paste Header/Footer vào từng file
+và (B) Sử dụng layout:decorate.
+
+(A) Copy-paste Header/Footer vào từng file
+- Ưu điểm:
+    + Đơn giản, dễ hiểu
+    + Không cần cấu hình thêm
+- Nhược điểm:
+    + Lặp lại nhiều đoạn code giống nhau
+    + Khó bảo trì: sửa header/footer phải sửa tất cả file
+    + Dễ gây lỗi không đồng bộ
+
+(B) Sử dụng layout:decorate
+- Ưu điểm:
+    + Tái sử dụng code, tránh lặp lại
+    + Dễ bảo trì: thay đổi header/footer chỉ cần sửa 1 file
+    + Cấu trúc rõ ràng, tách biệt layout và nội dung
+- Nhược điểm:
+    + Cần cấu hình thêm LayoutDialect
+    + Ban đầu hơi phức tạp hơn cho người mới
+    + Phụ thuộc vào thư viện ngoài Thymeleaf core
+
+Triển khai file "main-layout-hw04.html" theo cách B

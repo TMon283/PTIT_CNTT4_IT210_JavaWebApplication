@@ -1,0 +1,3 @@
+Code cũ hiện đang có 2 lỗi là:
+    - (1) Sai phần mở rộng (setSuffix(".jsp") -> setSuffix(".html"))
+    - (2) Chưa khai báo SpringTemplateEngine và ThymeleafViewResolver

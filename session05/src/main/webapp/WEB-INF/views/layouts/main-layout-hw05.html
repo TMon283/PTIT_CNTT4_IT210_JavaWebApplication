@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+  <title layout:fragment="title">Nhà hàng ABC</title>
+</head>
+<body>
+<header>
+  <h1>Nhà hàng ABC</h1>
+  <nav>
+    <a th:href="@{/bai2/dishes}">Danh sách món ăn</a> |
+    <a th:href="@{/bai5/order/quick}">Đặt món nhanh</a>
+  </nav>
+  <hr/>
+</header>
+
+<main layout:fragment="content"></main>
+
+<footer>
+  <hr/>
+  <p>Liên hệ: 0123-456-789 | Email: contact@nhahangabc.vn</p>
+</footer>
+</body>
+</html>

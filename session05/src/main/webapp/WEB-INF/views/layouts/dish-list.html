@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Danh sách thực đơn</title>
+</head>
+<body>
+<h2>Thực đơn nhà hàng</h2>
+
+<table border="1" cellpadding="5">
+  <tr>
+    <th>ID</th>
+    <th>Tên món</th>
+    <th>Giá</th>
+    <th>Trạng thái</th>
+  </tr>
+  <tr th:each="dish : ${dishes}">
+    <td th:text="${dish.id}"></td>
+    <td th:text="${dish.name}"></td>
+    <td th:text="${dish.price} + ' VND'"></td>
+    <td th:if="${dish.isAvailable}" class="in-stock">Còn hàng</td>
+    <td th:unless="${dish.isAvailable}" class="out-of-stock">Hết hàng</td>
+    <td>
+      <a th:href="@{|/homework03/edit/${dish.id}|}">Chỉnh sửa</a>
+    </td>
+  </tr>
+
+</table>
+
+</body>
+</html>
